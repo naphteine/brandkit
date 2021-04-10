@@ -9,12 +9,10 @@ def get_rline(file_name):
         
     return word.rstrip()
 
-def main():
+if __name__ == "__main__":
     nouns = "nouns.txt"
     adjectives = "adjectives.txt"
 
     for i in range(10):
         name = get_rline(adjectives) + "-" + get_rline(nouns)
         print(name)
-
-main()
