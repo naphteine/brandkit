@@ -1,25 +1,21 @@
 import argparse
 import random
 
-def get_rline(file_name):
-    word = ""
-    
-    with open(file_name, "r") as line_file:
-        lines = line_file.readlines()
-        word = lines[random.randrange(len(lines))]
-        
-    return word.rstrip()
+# get_random_line method takes readlines() output and retuns random, single, stripped line
+def get_random_line(lines):
+    return lines[random.randrange(len(lines))].rstrip()
 
+# Main
 if __name__ == "__main__":
     # Handle arguments
     parser = argparse.ArgumentParser("probable-octo-broccoli")
     parser.add_argument('-c', '--count', help="Count of names to generate. Default is 10.", type=int, default=10)
     args = parser.parse_args()
 
-    # Do things
-    nouns = "nouns.txt"
-    adjectives = "adjectives.txt"
+    # Read files
+    nouns = open("nouns.txt", "r").readlines()
+    adjectives = open("adjectives.txt", "r").readlines()
 
+    # Print random lines
     for i in range(args.count):
-        name = get_rline(adjectives) + "-" + get_rline(nouns)
-        print(name)
+        print(get_random_line(adjectives) + "-" + get_random_line(nouns))
