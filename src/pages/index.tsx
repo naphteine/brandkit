@@ -16,13 +16,31 @@ const Home = () => {
   ]);
 
   const allFonts = [
-    "Gloock",
-    "Outfit",
+    "Amatic SC",
     "Archivo",
-    "VT323",
-    "Tilt Neon",
     "Bebas Neue",
+    "Black Ops One",
+    "Cherry Bomb One",
+    "Dancing Script",
+    "Foldit",
+    "Gloock",
+    "Great Vibes",
     "Josefin Sans",
+    "Kaushan Script",
+    "Lilita One",
+    "Mali",
+    "Moirai One",
+    "Outfit",
+    "Rubik Dirt",
+    "Rubik Mono One",
+    "Sacramento",
+    "Special Elite",
+    "Staatliches",
+    "Tektur",
+    "Tilt Neon",
+    "Tsukimi Rounded",
+    "VT323",
+    "Zeyada",
   ];
 
   const nameChange = (event: { target: { value: SetStateAction<string> } }) => {
