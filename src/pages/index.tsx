@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import randomColor from "randomcolor";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,7 +11,11 @@ const Home = () => {
   const [brandName, setBrandName] = useState("Brandkit");
   const [spacing, setSpacing] = useState(0.1);
 
-  const fonts = [
+  const [itemsData, setItemsData] = useState([
+    { bg: randomColor(), name: "Brandkit", spacing: 0.1, font: "Gloock" },
+  ]);
+
+  const allFonts = [
     "Gloock",
     "Outfit",
     "Archivo",
@@ -30,8 +34,27 @@ const Home = () => {
   };
 
   const randomFont = () => {
-    return fonts[Math.floor(Math.random() * fonts.length)];
+    return allFonts[Math.floor(Math.random() * allFonts.length)];
   };
+
+  const regenerate = () => {
+    const generated = [];
+
+    for (let i = 0; i < 32; i++) {
+      generated.push({
+        bg: randomColor(),
+        name: brandName,
+        spacing: spacing,
+        font: randomFont(),
+      });
+    }
+
+    setItemsData(generated);
+  };
+
+  useEffect(() => {
+    regenerate();
+  }, []);
 
   return (
     <>
@@ -43,7 +66,7 @@ const Home = () => {
       </Head>
       <header className={styles.header}>
         <h1>Brandkit</h1>
-        <em>Brand Generator</em>
+        <em>Brand Generation Tool</em>
       </header>
       <main>
         <div className={styles.options}>
@@ -71,120 +94,25 @@ const Home = () => {
             />
           </section>
 
-          <button>Regenerate</button>
+          <button onClick={regenerate}>Regenerate</button>
         </div>
 
         <h2>Results</h2>
         <section className={styles.resultbox} title="results">
-          {}
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
-          <article
-            style={{
-              backgroundColor: randomColor(),
-              letterSpacing: spacing + "px",
-              fontFamily: randomFont(),
-            }}
-          >
-            {brandName}
-          </article>
+          {itemsData.map((item, index) => (
+            <article
+              key={index}
+              className={styles.item}
+              style={{ backgroundColor: item.bg, fontFamily: item.font }}
+            >
+              {item.name}
+
+              <div className={styles.details}>
+                <p>{item.font}</p>
+                <p>{item.bg}</p>
+              </div>
+            </article>
+          ))}
         </section>
       </main>
     </>
