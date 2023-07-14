@@ -99,6 +99,7 @@ const Home = () => {
         <section className={styles.resultbox} title="results">
           {itemsData.map((item, index) => (
             <article
+              title="Click to copy the color"
               key={index}
               className={styles.item}
               onClick={() => {
