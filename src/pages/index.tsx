@@ -101,14 +101,15 @@ const Home = () => {
             <article
               key={index}
               className={styles.item}
+              onClick={() => {
+                navigator.clipboard.writeText(item.bg);
+              }}
               style={{
                 backgroundColor: item.bg,
                 fontFamily: item.font,
               }}
             >
-              <div style={{ letterSpacing: spacing | "normal" }}>
-                {brandName}
-              </div>
+              <div style={{ letterSpacing: spacing | 0.1 }}>{brandName}</div>
 
               <div className={styles.details}>
                 <p>{item.font}</p>
