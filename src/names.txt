@@ -28,6 +28,7 @@ nexus
 observer
 omen
 oracle
+pangea
 pathway
 phantasm
 prism
