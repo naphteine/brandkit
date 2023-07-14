@@ -1,13 +1,11 @@
 # Brandkit
 
-Brandkit is a web application built with Next.js that allows users to create and customize unique brand identities. With an intuitive interface and powerful design tools, users can effortlessly generate logos, select color schemes, and explore various typography options to establish a distinct brand presence.
+Brandkit is a web application built with Next.js that allows users to create and customize unique brand identities. With an easy to use interface, users can effortlessly generate colors and explore various typography options to establish a distinct brand presence.
 
 ## Features
 
-- Color Customization: Experiment with different color palettes to find the perfect combination that represents your brand.
+- Color Customization: Experiment with different colors to find the perfect one that represents your brand.
 - Typography Exploration: Browse and select from a wide range of fonts to find the ideal typography for your brand identity.
-- Logo Generation: Create eye-catching logos using customizable templates and design elements.
-- User-Friendly Interface: The application offers a sleek and intuitive interface, making it easy to navigate and create stunning brand designs.
 
 ## Getting Started
 
@@ -17,13 +15,29 @@ Brandkit is a web application built with Next.js that allows users to create and
 4. Start the development server: `yarn run dev`
 5. Open your browser and visit: `http://localhost:3000`
 
+## Project Structure
+
+- `/pages`: Contains the application's pages and routing logic.
+- `/components`: Includes reusable React components used throughout the project.
+- `/styles`: Houses global styles and Tailwind CSS configuration files.
+- `/public`: Stores static assets.
+
 ## Technologies Used
 
 - Next.js 13
 - React
-- CSS Modules
 - TypeScript
+- CSS Modules
+
+## Roadmap
+
+- Color Scheme Generation
+- Logo Generation
 
 ## Contributing
 
-Contributions are welcome! If you encounter any issues or have suggestions for improvement, please submit a pull request or open an issue on the GitHub repository.
+This is a private project. If you encounter any issues or have suggestions for improvement, please open an issue on the GitHub repository.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
