@@ -33,6 +33,7 @@ Brandkit is a web application built with Next.js that allows users to create and
 
 - Color Scheme Generation
 - Logo Generation
+- Name Generation
 
 ## Contributing
 
