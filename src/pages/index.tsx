@@ -46,29 +46,33 @@ const Home = () => {
         <em>Brand Generator</em>
       </header>
       <main>
-        <h2>Options</h2>
-        <section>
-          <label htmlFor="brand">Brand Name</label>
-          <input
-            id="brand"
-            name="brand"
-            value={brandName}
-            onChange={nameChange}
-          />
+        <div className={styles.options}>
+          <h2>Options</h2>
+          <section>
+            <label htmlFor="brand">Brand Name</label>
+            <input
+              id="brand"
+              name="brand"
+              value={brandName}
+              onChange={nameChange}
+            />
 
-          <br />
+            <br />
 
-          <label htmlFor="spacing">Letter spacing</label>
-          <input
-            type="range"
-            id="spacing"
-            name="spacing"
-            min={-20}
-            max={20}
-            value={spacing}
-            onChange={spacingChange}
-          />
-        </section>
+            <label htmlFor="spacing">Letter spacing</label>
+            <input
+              type="range"
+              id="spacing"
+              name="spacing"
+              min={-20}
+              max={20}
+              value={spacing}
+              onChange={spacingChange}
+            />
+          </section>
+
+          <button>Regenerate</button>
+        </div>
 
         <h2>Results</h2>
         <section className={styles.resultbox} title="results">
