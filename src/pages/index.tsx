@@ -12,7 +12,7 @@ const Home = () => {
   const [spacing, setSpacing] = useState(0.1);
 
   const [itemsData, setItemsData] = useState([
-    { bg: "#ffffff", name: "Brandkit", spacing: 0.1, font: "Gloock" },
+    { bg: "#ffffff", spacing: 0.1, font: "Gloock" },
   ]);
 
   const allFonts = [
@@ -43,7 +43,6 @@ const Home = () => {
     for (let i = 0; i < 32; i++) {
       generated.push({
         bg: randomColor(),
-        name: brandName,
         spacing: spacing,
         font: randomFont(),
       });
@@ -106,10 +105,11 @@ const Home = () => {
               style={{
                 backgroundColor: item.bg,
                 fontFamily: item.font,
-                letterSpacing: item.spacing,
               }}
             >
-              {item.name}
+              <div style={{ letterSpacing: item.spacing || "normal" }}>
+                {brandName}
+              </div>
 
               <div className={styles.details}>
                 <p>{item.font}</p>
