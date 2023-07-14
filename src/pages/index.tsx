@@ -12,7 +12,7 @@ const Home = () => {
   const [spacing, setSpacing] = useState(0.1);
 
   const [itemsData, setItemsData] = useState([
-    { bg: randomColor(), name: "Brandkit", spacing: 0.1, font: "Gloock" },
+    { bg: "#ffffff", name: "Brandkit", spacing: 0.1, font: "Gloock" },
   ]);
 
   const allFonts = [
@@ -103,7 +103,11 @@ const Home = () => {
             <article
               key={index}
               className={styles.item}
-              style={{ backgroundColor: item.bg, fontFamily: item.font }}
+              style={{
+                backgroundColor: item.bg,
+                fontFamily: item.font,
+                letterSpacing: item.spacing,
+              }}
             >
               {item.name}
 
