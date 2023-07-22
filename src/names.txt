@@ -4,6 +4,7 @@ aegis
 aether
 agape
 agility
+ahenk
 airwave
 akira
 alcatraz
@@ -76,6 +77,7 @@ darkedge
 darkjazz
 darkwatch
 deepcover
+deniz
 deus
 disengage
 dry retch
@@ -225,6 +227,7 @@ scapel
 scribe
 sentinel
 sentry
+serap
 seraph
 shadow
 shaked cola
@@ -289,5 +292,6 @@ xanadu
 yellowstone
 yuki
 yuno
+zaman
 zenesis
 zenith
