@@ -4,7 +4,9 @@ import styles from "@/styles/Home.module.css";
 import { SetStateAction, useEffect, useState } from "react";
 import randomColor from "randomcolor";
 import { RiAiGenerate } from "react-icons/ri";
-import nouns from "../json/nouns.json";
+
+import adjectives from "../json/adjectives.json";
+import names from "../json/names.json";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,7 +59,14 @@ const Home = () => {
   };
 
   const randomName = () => {
-    setBrandName(nouns[Math.floor(Math.random() * nouns.length)]);
+    const selectFrom = [
+      `${names[Math.floor(Math.random() * names.length)]}`,
+      `${adjectives[Math.floor(Math.random() * adjectives.length)]} ${
+        names[Math.floor(Math.random() * names.length)]
+      }`,
+    ];
+
+    setBrandName(selectFrom[Math.floor(Math.random() * selectFrom.length)]);
   };
 
   const regenerate = () => {
