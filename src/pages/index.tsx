@@ -1,9 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { SetStateAction, useEffect, useState } from "react";
 import randomColor from "randomcolor";
+import { RiAiGenerate } from "react-icons/ri";
+import nouns from "../json/nouns.json";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,6 +56,10 @@ const Home = () => {
     return allFonts[Math.floor(Math.random() * allFonts.length)];
   };
 
+  const randomName = () => {
+    setBrandName(nouns[Math.floor(Math.random() * nouns.length)]);
+  };
+
   const regenerate = () => {
     const generated = [];
 
@@ -95,6 +100,8 @@ const Home = () => {
               value={brandName}
               onChange={nameChange}
             />
+
+            <RiAiGenerate onClick={randomName} size={16} />
 
             <br />
 
