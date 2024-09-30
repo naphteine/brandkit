@@ -12,7 +12,7 @@ importers:
         specifier: 22.7.4
         version: 22.7.4
       '@types/randomcolor':
-        specifier: ^0.5.7
+        specifier: ^0.5.9
         version: 0.5.9
       '@types/react':
         specifier: 18.3.10
